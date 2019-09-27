@@ -1,20 +1,13 @@
 export interface ISetting {
-  repairs: IRepairs[],
-  typeHouse: ITypeHouse[],
-  quantity: IQuantity[]
+  repairs: ICommon[],
+  typeHouse: ICommon[],
+  quantity: ICommon[],
 }
 
-export interface  IRepairs {
-  id: number
-  title: string
-}
-
-export interface  ITypeHouse {
-  id: number
-  title: string
-}
-
-export interface  IQuantity {
+interface ICommons {
   id: number,
-  title: string
+  title: string,
+  check: boolean
 }
+
+type ICommon = ICommons[]

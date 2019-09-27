@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
-import { editRepairs } from "../../store/setting/setting.action";
+import { repairsChange } from "../../store/setting/setting.action";
 import Slider from "../Slider";
-import { ISetting } from "../../models/setting.model";
-
 
 interface IProps extends StoreProps, DispatchProps {
 
 }
 
 interface DispatchProps {
-  editRepairs: HandlerDispatch;
+  repairsChange: HandlerDispatch;
 }
 
 interface StoreProps {
-  repairs?: any ,
-  typeHouse?: any,
-  quantity: any
+  repairs: any[],
+  typeHouse: any[],
+  quantity: any[]
 }
 
 const Setting = (props: IProps) => {
+  const [repairs, setRepairs] = useState(1);
+  const handleChange = (id: number) => {
+    setRepairs(id);
+    props.repairsChange(id)
+  };
   return (
     <div className={"setting"}>
       <div className={"settingContent"}>
@@ -29,8 +32,11 @@ const Setting = (props: IProps) => {
           {props.repairs.map((name: any) => {
             return (
               <div key={name.id} className={"wrapperInput"}>
-                <input className={"settingList"} type="radio" id={"nameBox"}/>
-                <label htmlFor="nameBox">{name.title}</label>
+                <label>
+                  <input className={"settingList"} type="radio" id={"nameBox"} checked={repairs === name.id}
+                         onChange={() => handleChange(name.id)}/>
+                  {name.title}
+                </label>
               </div>
             )
           })}
@@ -38,9 +44,9 @@ const Setting = (props: IProps) => {
         <div className={"settingCommon settingRight"}>
           <div>
             <p className={"heading"}>Тип дома</p>
-            {props.typeHouse.map((home: any) => {
+            {props.typeHouse.map((home: any, homeId: number) => {
               return (
-                <div key={home.id} className={"wrapperInput"}>
+                <div key={homeId} className={"wrapperInput"}>
                   <input className={"settingList"} type="radio" id={"homeBox"}/>
                   <label htmlFor="homeBox">{home.title}</label>
                 </div>
@@ -50,9 +56,9 @@ const Setting = (props: IProps) => {
           <div>
             <p className={"heading"}>Колличество комнат</p>
             <div className={"roomItems"}>
-              {props.quantity.map((room: any) => {
+              {props.quantity.map((room: any, roomId: number) => {
                 return (
-                  <div key={room.id} className={"roomItem"}>
+                  <div key={roomId} className={"roomItem"}>
                     {room.title}
                   </div>
                 )
@@ -77,7 +83,7 @@ const mapStateToProps = (state: RootState) => {
 };
 
 const mapDispatchToProps = {
-  editRepairs,
+  repairsChange,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Setting);
