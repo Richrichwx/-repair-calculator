@@ -1,10 +1,10 @@
-export interface ISetting {
-  repairs: ISettings[],
-  typeHouse: ISettings[],
-  quantity: ISettings[]
+export interface ISettings {
+  repairs: ISetting[],
+  typeHouse: ISetting[],
+  quantity: ISetting[]
 }
 
-interface ISettings {
+export interface ISetting {
   id: number,
   title: string,
   check: boolean

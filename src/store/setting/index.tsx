@@ -1,7 +1,7 @@
-import { ISetting } from "../../models/setting.model";
-import { checkedRepair } from './setting.convector'
+import { ISettings } from "../../models/setting.model";
+import { checkedRepair } from "./setting.convector";
 
-const initialState: ISetting = {
+const initialState: ISettings = {
   repairs: [
     {
       id: 1,
@@ -65,14 +65,15 @@ const initialState: ISetting = {
   ],
 };
 
-export default function (state: ISetting = initialState, action: any) {
+export default function (state: ISettings = initialState, action: any) {
+
   const payload = checkedRepair(action.id)(state.repairs);
 
   switch (action.type) {
     case "REPAIRS_CHANGE": {
       return {
         ...state,
-        repairs: payload,
+        repairs: payload
       }
     }
     default:
