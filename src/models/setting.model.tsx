@@ -1,13 +1,12 @@
 export interface ISetting {
-  repairs: ICommon,
-  typeHouse: ICommon,
-  quantity: ICommon,
+  repairs: ISettings[],
+  typeHouse: ISettings[],
+  quantity: ISettings[]
 }
 
-interface ICommons {
+interface ISettings {
   id: number,
   title: string,
   check: boolean
 }
 
-type ICommon = ICommons[]
