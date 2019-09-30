@@ -1,7 +1,7 @@
 export interface ISetting {
-  repairs: ICommon[],
-  typeHouse: ICommon[],
-  quantity: ICommon[],
+  repairs: ICommon,
+  typeHouse: ICommon,
+  quantity: ICommon,
 }
 
 interface ICommons {
