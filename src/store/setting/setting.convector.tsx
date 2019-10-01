@@ -20,3 +20,7 @@ const transformRepairs: TransformRepairs = (id: any) => (item: Repair) =>
 
 export const checkedRepair = (actionId: any) =>
   compose(map(transformRepairs(actionId)));
+
+
+export const checkedHomes = (actionId: any) =>
+  compose(map(transformRepairs(actionId)));

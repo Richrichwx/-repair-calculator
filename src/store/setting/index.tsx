@@ -1,5 +1,5 @@
 import { ISettings } from "../../models/setting.model";
-import { checkedRepair } from "./setting.convector";
+import { checkedHomes, checkedRepair } from "./setting.convector";
 
 const initialState: ISettings = {
   repairs: [
@@ -31,7 +31,7 @@ const initialState: ISettings = {
       check: false,
     },
     {
-      id: 1,
+      id: 2,
       title: 'Вторичка',
       check: false,
     },
@@ -68,12 +68,19 @@ const initialState: ISettings = {
 export default function (state: ISettings = initialState, action: any) {
 
   const payload = checkedRepair(action.id)(state.repairs);
+  const data = checkedHomes(action.id)(state.typeHouse);
 
   switch (action.type) {
     case "REPAIRS_CHANGE": {
       return {
         ...state,
         repairs: payload
+      }
+    }
+    case "HOMES_CHANGE": {
+      return {
+        ...state,
+        typeHouse: data
       }
     }
     default:

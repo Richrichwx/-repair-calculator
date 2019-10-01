@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
-import { repairsChange } from "../../store/setting/setting.action";
+import { homesChange, repairsChange } from "../../store/setting/setting.action";
 import Slider from "../Slider";
 import { ISetting } from "../../models/setting.model";
 
@@ -11,6 +11,7 @@ interface IProps extends StoreProps, DispatchProps {
 
 interface DispatchProps {
   repairsChange: HandlerDispatch;
+  homesChange: HandlerDispatch;
 }
 
 interface StoreProps {
@@ -20,23 +21,30 @@ interface StoreProps {
 }
 
 const Setting = (props: IProps) => {
-  const [repairs, setRepairs] = useState(1);
-  const handleChange = (id: number) => {
+  const [repairs, setRepairs] = useState(0);
+  const [homes, setHomes] = useState(0);
+
+  const repairsChangeInput = (id: number) => {
     setRepairs(id);
     props.repairsChange(id)
+  };
+
+  const homeChangeInput = (id: number) => {
+    setHomes(id)
+    props.homesChange(id)
   };
   return (
     <div className={"setting"}>
       <div className={"setting-content"}>
         <div className={"setting-common setting-content_left"}>
           <p className={"heading"}>Расчет ремонта</p>
-          {props.repairs.map((name: any) => {
+          {props.repairs.map((repair: any) => {
             return (
-              <div key={name.id} className={"wrapper-input"}>
+              <div key={repair.id} className={"wrapper-input"}>
                 <label>
-                  <input className={"setting-list"} type="radio" id={"name-box"} checked={repairs === name.id}
-                         onChange={() => handleChange(name.id)}/>
-                  {name.title}
+                  <input className={"setting-list"} type="radio" id={"name-box"} checked={repairs === repair.id}
+                         onChange={() => repairsChangeInput(repair.id)}/>
+                  {repair.title}
                 </label>
               </div>
             )
@@ -48,8 +56,11 @@ const Setting = (props: IProps) => {
             {props.typeHouse.map((home: any, homeId: number) => {
               return (
                 <div key={homeId} className={"wrapper-input"}>
-                  <input className={"setting-list"} type="radio" id={"home-box"}/>
-                  <label htmlFor="home-box">{home.title}</label>
+                  <label htmlFor="home-box">
+                    <input className={"setting-list"} type="radio" id={"home-box"} checked={homes === home.id}
+                           onChange={() => homeChangeInput(home.id)}/>
+                    {home.title}
+                  </label>
                 </div>
               )
             })}
@@ -85,6 +96,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = {
   repairsChange,
+  homesChange,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Setting);
