@@ -12,24 +12,24 @@ code {
     monospace;
 }
 
-.formItems {
+.form-items {
     max-width: 400px;
 }
 
-.formCommon {
+.form-common {
     width: 300px;
     padding: 15px 40px;
     border-radius: 30px;
     margin: 15px 0;
 }
 
-.formField {
+.form-field {
     outline: none;
     border: 2px solid #224a86;
     display: block;
 }
 
-.formField::placeholder {
+.form-field::placeholder {
     font-size: 17px;
     font-family: Gill Sans, sans-serif;
     font-weight: 600;
@@ -54,12 +54,12 @@ code {
 
 }
 
-.settingContent {
+.setting-content {
     display: flex;
     justify-content: space-between;
 }
 
-.settingCommon {
+.setting-common {
     padding: 10px 20px;
 }
 
@@ -70,26 +70,26 @@ code {
     margin: 0 0 13px 0;
 }
 
-.headingFlat {
+.heading-flat {
     text-align: center;
 }
 
-.wrapperInput {
+.wrapper-input {
     margin: 10px 0;
 }
 
-.wrapperInput label {
+.wrapper-input label {
     color: #535353;
     font-weight: 600;
     font-size: 14px;
     margin: 0 8px;
 }
 
-.roomItems {
+.room-items {
     display: flex;
 }
 
-.roomItem {
+.room-items_item {
     background: #dddddd;
     padding: 4px 7px;
     font-size: 13px;
@@ -98,22 +98,22 @@ code {
     color: #535353;
 }
 
-.roomItem:hover {
+.room-items_item:hover {
     background: #172457;
     color: #ffffff
 }
 
-.sliderContainer {
+.slider-container {
     display: flex;
     justify-content: center;
     padding: 10px;
 }
 
-.wrapperSlider {
+.wrapper-slider {
     display: flex;
 }
 
-.sliderInput {
+.slider-input {
     width: 290px;
 }
 

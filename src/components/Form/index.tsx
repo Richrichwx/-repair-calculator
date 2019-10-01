@@ -3,14 +3,14 @@ import React from 'react';
 const Form = () => {
   return (
     <div className={"form"}>
-      <div className={"formItems"}>
+      <div className={"form-items"}>
         <div>
-          <input className={"formCommon formField"} type="text" placeholder={"Введите ваше имя"}/>
+          <input className={"form-common form-field"} type="text" placeholder={"Введите ваше имя"}/>
         </div>
         <div>
-          <input className={"formCommon formField"} type="text" placeholder={"Введите номер телефона"}/>
+          <input className={"form-common form-field"} type="text" placeholder={"Введите номер телефона"}/>
         </div>
-        <div className={"formCommon sending"}>
+        <div className={"form-common sending"}>
           <span>
             Отправить
           </span></div>
