@@ -3,15 +3,19 @@ import { Slider,Form, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 import { FormComponentProps } from 'antd/lib/form';
 import { connect } from "react-redux";
+import { sliderChange } from "../../store/setting/setting.action";
 
-interface IProps extends FormComponentProps {
+interface IProps extends FormComponentProps,DispatchProps {
 }
-
-const SliderArea = () => {
+interface DispatchProps {
+  sliderChange: HandlerDispatch;
+}
+const SliderArea = (props:IProps ) => {
   const [value,setValue] = useState(300);
 
 const changePrice = (value: any) => {
-  setValue(value)
+  setValue(value);
+  props.sliderChange(value)
   };
   return (
     <div>
@@ -35,6 +39,10 @@ const changePrice = (value: any) => {
   )
 };
 
-export default connect(null)(
+const mapDispatchToProps = {
+  sliderChange
+};
+
+export default connect(null, mapDispatchToProps)(
   Form.create<IProps>()(SliderArea)
 );

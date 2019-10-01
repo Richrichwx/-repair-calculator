@@ -160,13 +160,13 @@ code {
     justify-content: space-between;
     padding: 0 20px;
 }
+
 .ant-form-item {
     margin: 0;
 }
 
 .ant-slider {
     width: 250px;
-
 }
 
 .slider-value {

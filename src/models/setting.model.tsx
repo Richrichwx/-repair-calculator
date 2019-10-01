@@ -2,7 +2,7 @@ export interface ISettings {
   repairs: ISetting[],
   typeHouse: ISetting[],
   quantity: ISetting[],
-  price: number
+  sliderValue: number
 }
 
 export interface ISetting {

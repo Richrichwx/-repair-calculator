@@ -12,3 +12,8 @@ export const roomsButton = (id: any) => ({
   type: 'ROOMS_BUTTON',
   id
 });
+
+export const sliderChange = (value: any) => ({
+  type: 'SLIDER_CHANGE',
+  value
+});

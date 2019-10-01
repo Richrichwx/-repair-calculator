@@ -63,7 +63,7 @@ const initialState: ISettings = {
       check: false,
     },
   ],
-  price: 0
+  sliderValue: 0
 };
 
 export default function (state: ISettings = initialState, action: any) {
@@ -89,6 +89,12 @@ export default function (state: ISettings = initialState, action: any) {
       return {
         ...state,
         quantity: quantityData
+      }
+    }
+    case "SLIDER_CHANGE": {
+      return {
+        ...state,
+        sliderValue: action.value
       }
     }
     default:
