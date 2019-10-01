@@ -7,3 +7,8 @@ export const homesChange = (id: any) => ({
   type: 'HOMES_CHANGE',
   id
 });
+
+export const roomsButton = (id: any) => ({
+  type: 'ROOMS_BUTTON',
+  id
+});

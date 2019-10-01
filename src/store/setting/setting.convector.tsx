@@ -24,3 +24,6 @@ export const checkedRepair = (actionId: any) =>
 
 export const checkedHomes = (actionId: any) =>
   compose(map(transformRepairs(actionId)));
+
+export const checkedRooms = (actionId: any) =>
+  compose(map(transformRepairs(actionId)));

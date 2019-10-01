@@ -90,18 +90,29 @@ code {
 }
 
 .room-items_item {
-    background: #dddddd;
-    padding: 4px 7px;
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
-    color: #535353;
-}
+     background: #dddddd;
+     padding: 4px 7px;
+     font-size: 13px;
+     margin: 0 5px;
+     cursor: pointer;
+     color: #535353;
+ }
 
 .room-items_item:hover {
     background: #172457;
-    color: #ffffff
+    color: #ffffff;
 }
+
+.room-items_checked{
+    background: #172457;
+    padding: 4px 7px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #ffffff;
+    margin: 0 5px;
+}
+
+
 
 .slider-container {
     display: flex;

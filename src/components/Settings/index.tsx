@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
-import { homesChange, repairsChange } from "../../store/setting/setting.action";
+import { homesChange, repairsChange, roomsButton } from "../../store/setting/setting.action";
 import Slider from "../Slider";
 import { ISetting } from "../../models/setting.model";
 
@@ -12,6 +12,7 @@ interface IProps extends StoreProps, DispatchProps {
 interface DispatchProps {
   repairsChange: HandlerDispatch;
   homesChange: HandlerDispatch;
+  roomsButton: HandlerDispatch;
 }
 
 interface StoreProps {
@@ -21,8 +22,9 @@ interface StoreProps {
 }
 
 const Setting = (props: IProps) => {
-  const [repairs, setRepairs] = useState(0);
-  const [homes, setHomes] = useState(0);
+  const [repairs, setRepairs] = useState(1);
+  const [homes, setHomes] = useState(1);
+  const [rooms, setRooms] = useState(1);
 
   const repairsChangeInput = (id: number) => {
     setRepairs(id);
@@ -30,9 +32,15 @@ const Setting = (props: IProps) => {
   };
 
   const homeChangeInput = (id: number) => {
-    setHomes(id)
+    setHomes(id);
     props.homesChange(id)
   };
+
+  const roomButton = (id: number) => {
+    setRooms(id);
+    props.roomsButton(id)
+  };
+
   return (
     <div className={"setting"}>
       <div className={"setting-content"}>
@@ -70,8 +78,17 @@ const Setting = (props: IProps) => {
             <div className={"room-items"}>
               {props.quantity.map((room: any, roomId: number) => {
                 return (
-                  <div key={roomId} className={"room-items_item"}>
-                    {room.title}
+                  <div key={roomId}
+                       onClick={() => roomButton(room.id)}>
+                    {rooms === room.id ? (
+                      <div className={"room-items_checked"}>
+                        {room.title}
+                      </div>
+                    ) : (
+                      <div className={"room-items_item "}>
+                        {room.title}
+                      </div>
+                    )}
                   </div>
                 )
               })}
@@ -97,6 +114,7 @@ const mapStateToProps = (state: RootState) => {
 const mapDispatchToProps = {
   repairsChange,
   homesChange,
+  roomsButton
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Setting);
