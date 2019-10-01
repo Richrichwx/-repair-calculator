@@ -22,7 +22,7 @@ const changePrice = (value: any) => {
       <div className={"slider"}>
         <p className={"heading heading-flat"}>Площадь квартиры</p>
         <div className={"wrapper-slider"}>
-          <div className={"slider-value"}>{value}</div>
+          <div className={"slider-value"}>{value}см2</div>
           <Row>
             <Col span={12}>
               <Slider

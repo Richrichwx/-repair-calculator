@@ -65,6 +65,7 @@ code {
 .setting-content {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .setting-common {
@@ -80,6 +81,7 @@ code {
 
 .heading-flat {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .wrapper-input {
@@ -122,7 +124,6 @@ code {
 .slider-container {
     display: flex;
     justify-content: center;
-    padding: 10px;
 }
 
 .slider-input {
@@ -156,8 +157,6 @@ code {
 }
 
 .wrapper-slider {
-    display: flex;
-    justify-content: space-between;
     padding: 0 20px;
 }
 
@@ -171,11 +170,9 @@ code {
 
 .slider-value {
     padding: 5px;
-    width: 50px;
-    margin: 3px 5px 0 0;
     text-align: center;
     color: #172457;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
 }
 
