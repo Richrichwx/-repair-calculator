@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
 import { homesChange, repairsChange, roomsButton } from "../../store/setting/setting.action";
-import Slider from "../Slider";
+import SliderArea from "../Slider";
 import { ISetting } from "../../models/setting.model";
 
 interface IProps extends StoreProps, DispatchProps {
@@ -97,7 +97,7 @@ const Setting = (props: IProps) => {
         </div>
       </div>
       <div className={"slider-container"}>
-        <Slider/>
+        <SliderArea/>
       </div>
     </div>
   )

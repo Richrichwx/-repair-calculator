@@ -12,21 +12,15 @@ code {
     monospace;
 }
 
-.form-items {
-    max-width: 400px;
-}
-
-.form-common {
-    width: 300px;
-    padding: 15px 40px;
-    border-radius: 30px;
-    margin: 15px 0;
-}
-
 .form-field {
+    padding: 14px 20px;
+    border-radius: 30px;
+    margin: 10px;
     outline: none;
     border: 2px solid #224a86;
     display: block;
+    font-size: 17px;
+    font-family: Gill Sans, sans-serif;
 }
 
 .form-field::placeholder {
@@ -36,22 +30,36 @@ code {
     font-variant: normal;
 }
 
+.form-errors {
+    text-align: center;
+}
+
+.errors {
+    border-bottom:  2px solid #fb3439;
+    color: #224a86;
+    margin: 0 30px;
+    font-size: 16px;
+}
+
 .sending {
-    background: #fb3439;
-    border: 2px solid #fb3439;
-    font-size: 18px;
+    background: #224a86;
+    border: 2px solid #224a86;
+    font-size: 17px;
     color: #ffffff;
     font-weight: 600;
-    text-align: center;
     cursor: pointer;
+    outline: none;
+    padding: 14px 20px;
+    border-radius: 30px;
+    margin: 15px;
 }
 
 .setting {
+    margin-top: 20px;
     background: #f3f3f3;
     display: flex;
     flex-direction: column;
     padding: 10px;
-
 }
 
 .setting-content {
@@ -82,7 +90,6 @@ code {
     color: #535353;
     font-weight: 600;
     font-size: 14px;
-    margin: 0 8px;
 }
 
 .room-items {
@@ -103,7 +110,7 @@ code {
     color: #ffffff;
 }
 
-.room-items_checked{
+.room-items_checked {
     background: #172457;
     padding: 4px 7px;
     font-size: 13px;
@@ -112,16 +119,10 @@ code {
     margin: 0 5px;
 }
 
-
-
 .slider-container {
     display: flex;
     justify-content: center;
     padding: 10px;
-}
-
-.wrapper-slider {
-    display: flex;
 }
 
 .slider-input {
@@ -136,3 +137,45 @@ code {
     border: 1px solid #172457;
     margin-right: 5px;
 }
+
+.feeBack-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.setting-list {
+    margin-right: 5px;
+}
+
+.wrapper-slider {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.ant-form-item {
+    margin: 0;
+}
+
+.ant-slider {
+    width: 250px;
+
+}
+
+.slider-value {
+    padding: 5px;
+    width: 50px;
+    margin: 3px 5px 0 0;
+    text-align: center;
+    color: #172457;
+    font-size: 14px;
+    font-weight: 600;
+}
+

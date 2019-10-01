@@ -1,7 +1,8 @@
 export interface ISettings {
   repairs: ISetting[],
   typeHouse: ISetting[],
-  quantity: ISetting[]
+  quantity: ISetting[],
+  price: number
 }
 
 export interface ISetting {

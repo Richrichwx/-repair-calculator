@@ -63,6 +63,7 @@ const initialState: ISettings = {
       check: false,
     },
   ],
+  price: 0
 };
 
 export default function (state: ISettings = initialState, action: any) {
