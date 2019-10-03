@@ -20,7 +20,6 @@ interface StoreProps {
   typeHouse: ISetting[],
   quantity: ISetting[]
   flat: number;
-  one: number;
 }
 
 const Setting = (props: IProps) => {

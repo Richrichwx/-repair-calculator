@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8415cfa0-804f-4522-aab4-fee97b427fb1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Results/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Settings/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Slider/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/setting.model.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/setting.model.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/setting/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/setting/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/setting/setting.action.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/setting/setting.action.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +19,8 @@
       <file leaf-file-name="index.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Settings/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="122" column="29" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+            <state relative-caret-position="189">
+              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -239,12 +231,12 @@
       <workItem from="1569415463081" duration="373000" />
       <workItem from="1569415845197" duration="36453000" />
       <workItem from="1569709253327" duration="43039000" />
-      <workItem from="1569950094678" duration="21524000" />
+      <workItem from="1569950094678" duration="21607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109365000" />
+    <option name="totallyTimeSpent" value="109448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -264,9 +256,9 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3282353" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3282353" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -661,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Settings/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="122" column="29" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+        <state relative-caret-position="189">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
