@@ -35,7 +35,7 @@ code {
 }
 
 .errors {
-    border-bottom:  2px solid #fb3439;
+    border-bottom: 2px solid #fb3439;
     color: #224a86;
     margin: 0 30px;
     font-size: 16px;
@@ -81,7 +81,7 @@ code {
 
 .heading-flat {
     text-align: center;
-    margin-bottom: 10px;
+    margin: 5px 0;
 }
 
 .wrapper-input {
@@ -99,13 +99,13 @@ code {
 }
 
 .room-items_item {
-     background: #dddddd;
-     padding: 4px 7px;
-     font-size: 13px;
-     margin: 0 5px;
-     cursor: pointer;
-     color: #535353;
- }
+    background: #dddddd;
+    padding: 4px 7px;
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #535353;
+}
 
 .room-items_item:hover {
     background: #172457;
@@ -119,15 +119,6 @@ code {
     cursor: pointer;
     color: #ffffff;
     margin: 0 5px;
-}
-
-.slider-container {
-    display: flex;
-    justify-content: center;
-}
-
-.slider-input {
-    width: 290px;
 }
 
 .centimeters {
@@ -156,23 +147,32 @@ code {
     margin-right: 5px;
 }
 
-.wrapper-slider {
-    padding: 0 20px;
+.wrapper-flat {
+    padding: 0 15px;
+    display: flex;
 }
 
-.ant-form-item {
-    margin: 0;
+.flat-input {
+    border: 2px solid #172457;
+    width: 90px;
+    padding: 3px 15px;
+    border-radius: 30px;
+    outline: none;
+    font-size: 17px;
+    font-family: Gill Sans, sans-serif;
 }
 
-.ant-slider {
-    width: 250px;
+.flat-meter {
+    margin-left: 5px;
+    font-size: 20px;
 }
 
-.slider-value {
-    padding: 5px;
-    text-align: center;
-    color: #172457;
-    font-size: 15px;
-    font-weight: 600;
+.flat-container {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-input {
+    width: 290px;
 }
 

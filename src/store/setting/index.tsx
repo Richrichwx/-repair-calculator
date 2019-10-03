@@ -7,21 +7,25 @@ const initialState: ISettings = {
       id: 1,
       title: 'Косметический',
       check: false,
+      coefficient: 1
     },
     {
       id: 2,
       title: 'Капитальный',
       check: false,
+      coefficient: 1.67
     },
     {
       id: 3,
       title: 'Под ключ',
       check: false,
+      coefficient: 1.84
     },
     {
       id: 4,
       title: 'Дизайнерский',
       check: false,
+      coefficient: 2.4
     },
   ],
   typeHouse: [
@@ -41,29 +45,39 @@ const initialState: ISettings = {
       id: 1,
       title: '1',
       check: false,
+      priceSmall: 3000,
+      priceLarge: 2500
     },
     {
       id: 2,
       title: '2',
       check: false,
+      priceSmall: 2950,
+      priceLarge: 2450
     },
     {
       id: 3,
       title: '3',
       check: false,
+      priceSmall: 2900,
+      priceLarge: 2400
     },
     {
       id: 4,
       title: '4',
       check: false,
+      priceSmall: 2850,
+      priceLarge: 2350
     },
     {
       id: 5,
       title: '5',
       check: false,
+      priceSmall: 2800,
+      priceLarge: 2300
     },
   ],
-  sliderValue: 0
+  flat: 0,
 };
 
 export default function (state: ISettings = initialState, action: any) {
@@ -88,13 +102,13 @@ export default function (state: ISettings = initialState, action: any) {
     case "ROOMS_BUTTON": {
       return {
         ...state,
-        quantity: quantityData
+        quantity: quantityData,
       }
     }
-    case "SLIDER_CHANGE": {
+    case "FLAT_CHANGE": {
       return {
         ...state,
-        sliderValue: action.value
+        flat: action.flat
       }
     }
     default:

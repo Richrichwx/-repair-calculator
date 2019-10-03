@@ -10,10 +10,10 @@ export const homesChange = (id: any) => ({
 
 export const roomsButton = (id: any) => ({
   type: 'ROOMS_BUTTON',
-  id
+  id,
 });
 
-export const sliderChange = (value: any) => ({
-  type: 'SLIDER_CHANGE',
-  value
+export const flatChange = (flat: any) => ({
+  type: 'FLAT_CHANGE',
+  flat
 });

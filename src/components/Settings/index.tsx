@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
-import { homesChange, repairsChange, roomsButton } from "../../store/setting/setting.action";
-import SliderArea from "../Slider";
+import { flatChange, homesChange, repairsChange, roomsButton } from "../../store/setting/setting.action";
 import { ISetting } from "../../models/setting.model";
 
 interface IProps extends StoreProps, DispatchProps {
@@ -13,18 +12,22 @@ interface DispatchProps {
   repairsChange: HandlerDispatch;
   homesChange: HandlerDispatch;
   roomsButton: HandlerDispatch;
+  flatChange: HandlerDispatch;
 }
 
 interface StoreProps {
   repairs: ISetting[],
   typeHouse: ISetting[],
   quantity: ISetting[]
+  flat: number;
+  one: number;
 }
 
 const Setting = (props: IProps) => {
   const [repairs, setRepairs] = useState(1);
   const [homes, setHomes] = useState(1);
   const [rooms, setRooms] = useState(1);
+  const [flat, setFlat] = useState(props.flat);
 
   const repairsChangeInput = (id: number) => {
     setRepairs(id);
@@ -38,7 +41,12 @@ const Setting = (props: IProps) => {
 
   const roomButton = (id: number) => {
     setRooms(id);
-    props.roomsButton(id)
+    props.roomsButton(id);
+  };
+
+  const changeFlat = (e: any) => {
+    setFlat(e.currentTarget.value);
+    props.flatChange(e.currentTarget.value);
   };
 
   return (
@@ -96,8 +104,12 @@ const Setting = (props: IProps) => {
           </div>
         </div>
       </div>
-      <div className={"slider-container"}>
-        <SliderArea/>
+      <div className={"flat-container"}>
+        <p className={"heading heading-flat"}>Площадь квартиры</p>
+        <div className={"wrapper-flat"}>
+          <input type="number" className={"flat-input"} value={flat} onChange={changeFlat}/>
+          <div className={"flat-meter"}>м²</div>
+        </div>
       </div>
     </div>
   )
@@ -108,13 +120,15 @@ const mapStateToProps = (state: RootState) => {
     repairs: state.setting.repairs,
     typeHouse: state.setting.typeHouse,
     quantity: state.setting.quantity,
+    flat: state.setting.flat,
   }
 };
 
 const mapDispatchToProps = {
   repairsChange,
   homesChange,
-  roomsButton
+  roomsButton,
+  flatChange
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Setting);
