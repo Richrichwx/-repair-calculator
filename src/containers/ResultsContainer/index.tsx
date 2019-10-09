@@ -4,7 +4,6 @@ import { RootState } from "../../core/reducers";
 import {
   totalAmountFunc,
 } from "../../store/setting/setting.action";
-import { find, propEq, multiply } from "ramda";
 import { ISettings } from "../../models/setting.model";
 import Results from '../../components/Results/index';
 import ResultsButton from "../../components/ResultsButton/index";

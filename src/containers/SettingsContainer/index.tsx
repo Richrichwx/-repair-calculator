@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { RootState } from "../../core/reducers/index";
+import { RootState } from "../../core/reducers";
 import {
   homesChange,
   repairsChange,
   roomsButton,
   flatChange,
 } from "../../store/setting/setting.action";
-import { find, propEq, multiply } from "ramda";
 import { ISettings } from "../../models/setting.model";
 import Repairs from '../../components/Repairs/index';
 import TypeHome from '../../components/TypeHome/index';
