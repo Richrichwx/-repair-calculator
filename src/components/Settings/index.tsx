@@ -58,7 +58,6 @@ const Setting = (props: IProps) => {
     props.flatChange(e.currentTarget.value);
   };
 
-
   const resultBtn = () => {
     const totalPayload = commonResultFunc(flat)(props.setting.price)(props.setting.coefficientActive);
     const discountPayload = commonDiscount(totalPayload)(props.setting.discount);

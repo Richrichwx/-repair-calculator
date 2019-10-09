@@ -21,6 +21,7 @@ const transformRepairs: TransformRepairs = (id: any) => (item: Repair) =>
 export const checkedCommon = (actionId: any) =>
   compose(map(transformRepairs(actionId)));
 
+
 export const commonResultFunc = (flat: number) => (price: any) => (coefficient: number) => {
   if (flat >= 10 && flat <= 99) {
     const result = multiply(flat)(price.small);
