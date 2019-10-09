@@ -12,5 +12,8 @@ export interface ISetting {
   coefficient?: number,
   priceSmall?: number,
   priceLarge?: number,
+  price?: {
+    small: number,
+    large: number
+  },
 }
-

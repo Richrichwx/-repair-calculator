@@ -1,16 +1,16 @@
-export const repairsChange = (id: any) => ({
+export const repairsChange = (dataRepairs: any) => ({
   type: 'REPAIRS_CHANGE',
-  id
+  dataRepairs
 });
 
-export const homesChange = (id: any) => ({
+export const homesChange = (dataHomes: any) => ({
   type: 'HOMES_CHANGE',
-  id
+  dataHomes
 });
 
-export const roomsButton = (id: any) => ({
+export const roomsButton = (dataRooms: any) => ({
   type: 'ROOMS_BUTTON',
-  id,
+  dataRooms
 });
 
 export const flatChange = (flat: any) => ({

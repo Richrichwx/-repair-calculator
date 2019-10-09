@@ -11,11 +11,11 @@ const transformRepairs: TransformRepairs = (id: any) => (item: Repair) =>
         {
           check: always(true),
         },
-        item
+        item,
       ))],
-      [T, () => evolve({ check: always(false) }, item)]
+      [T, () => evolve({ check: always(false) }, item)],
     ]),
-    prop('id') as any
+    prop('id') as any,
   )(item);
 
 export const checkedRepair = (actionId: any) =>

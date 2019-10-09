@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
 import { flatChange, homesChange, repairsChange, roomsButton } from "../../store/setting/setting.action";
 import { ISetting } from "../../models/setting.model";
+import { checkedHomes, checkedRepair, checkedRooms } from "../../store/setting/setting.convector";
 
 interface IProps extends StoreProps, DispatchProps {
 
@@ -26,21 +27,24 @@ const Setting = (props: IProps) => {
   const [repairs, setRepairs] = useState(1);
   const [homes, setHomes] = useState(1);
   const [rooms, setRooms] = useState(1);
-  const [flat, setFlat] = useState(props.flat);
+  const [flat, setFlat] = useState(0);
 
   const repairsChangeInput = (id: number) => {
     setRepairs(id);
-    props.repairsChange(id)
+    const repairsData = checkedRepair(id)(props.repairs);
+    props.repairsChange(repairsData)
   };
 
   const homeChangeInput = (id: number) => {
     setHomes(id);
-    props.homesChange(id)
+    const homesData = checkedHomes(id)(props.typeHouse);
+    props.homesChange(homesData)
   };
 
-  const roomButton = (id: number) => {
+  const roomButton = (id: number,price: number) => {
     setRooms(id);
-    props.roomsButton(id);
+    const quantityData = checkedRooms(id)(props.quantity);
+    props.roomsButton(quantityData);
   };
 
   const changeFlat = (e: any) => {
@@ -86,7 +90,7 @@ const Setting = (props: IProps) => {
               {props.quantity.map((room: any, roomId: number) => {
                 return (
                   <div key={roomId}
-                       onClick={() => roomButton(room.id)}>
+                       onClick={() => roomButton(room.id,room.price)}>
                     {rooms === room.id ? (
                       <div className={"room-items_checked"}>
                         {room.title}
