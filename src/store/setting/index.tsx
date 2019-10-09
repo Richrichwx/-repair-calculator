@@ -87,6 +87,11 @@ const initialState: ISettings = {
     },
   ],
   flat: 0,
+  coefficientActive: 0,
+  price: {},
+  totalAmount: 0,
+  discount: 0.11,
+  totalDiscount: 0,
 };
 
 export default function (state: ISettings = initialState, action: any) {
@@ -95,6 +100,7 @@ export default function (state: ISettings = initialState, action: any) {
       return {
         ...state,
         repairs: action.dataRepairs,
+        coefficientActive: action.coefficient
       }
     }
     case "HOMES_CHANGE": {
@@ -107,12 +113,20 @@ export default function (state: ISettings = initialState, action: any) {
       return {
         ...state,
         quantity: action.dataRooms,
+        price: action.price,
       }
     }
     case "FLAT_CHANGE": {
       return {
         ...state,
         flat: action.flat,
+      }
+    }
+    case "TOTAL_AMOUNT_FUNC": {
+      return {
+        ...state,
+        totalAmount: action.total,
+        totalDiscount: action.discount
       }
     }
     default:

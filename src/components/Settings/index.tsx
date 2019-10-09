@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
-import { flatChange, homesChange, repairsChange, roomsButton } from "../../store/setting/setting.action";
-import { ISetting } from "../../models/setting.model";
-import { checkedHomes, checkedRepair, checkedRooms } from "../../store/setting/setting.convector";
+import {
+  homesChange,
+  repairsChange,
+  roomsButton,
+  flatChange, totalAmountFunc,
+} from "../../store/setting/setting.action";
+import {
+  checkedHomes,
+  checkedRepair,
+  checkedRooms,
+  commonDiscount,
+  commonResultFunc,
+} from "../../store/setting/setting.convector";
+import { find, propEq, multiply } from "ramda";
+import { ISettings } from "../../models/setting.model";
 
 interface IProps extends StoreProps, DispatchProps {
-
 }
 
 interface DispatchProps {
@@ -14,13 +25,11 @@ interface DispatchProps {
   homesChange: HandlerDispatch;
   roomsButton: HandlerDispatch;
   flatChange: HandlerDispatch;
+  totalAmountFunc: HandlerDispatch;
 }
 
 interface StoreProps {
-  repairs: ISetting[],
-  typeHouse: ISetting[],
-  quantity: ISetting[]
-  flat: number;
+  setting: ISettings,
 }
 
 const Setting = (props: IProps) => {
@@ -29,22 +38,22 @@ const Setting = (props: IProps) => {
   const [rooms, setRooms] = useState(1);
   const [flat, setFlat] = useState(0);
 
-  const repairsChangeInput = (id: number) => {
+  const repairsChangeInput = (id: number, coefficient: any) => {
     setRepairs(id);
-    const repairsData = checkedRepair(id)(props.repairs);
-    props.repairsChange(repairsData)
+    const repairsData = checkedRepair(id)(props.setting.repairs);
+    props.repairsChange(repairsData, coefficient);
   };
 
   const homeChangeInput = (id: number) => {
     setHomes(id);
-    const homesData = checkedHomes(id)(props.typeHouse);
+    const homesData = checkedHomes(id)(props.setting.typeHouse);
     props.homesChange(homesData)
   };
 
-  const roomButton = (id: number,price: number) => {
+  const roomButton = (id: number, price: any) => {
     setRooms(id);
-    const quantityData = checkedRooms(id)(props.quantity);
-    props.roomsButton(quantityData);
+    const quantityData = checkedRooms(id)(props.setting.quantity);
+    props.roomsButton(quantityData, price);
   };
 
   const changeFlat = (e: any) => {
@@ -52,17 +61,24 @@ const Setting = (props: IProps) => {
     props.flatChange(e.currentTarget.value);
   };
 
+
+  const resultBtn = () => {
+    const totalPayload = commonResultFunc(flat)(props.setting.price)(props.setting.coefficientActive);
+    const discountPayload = commonDiscount(totalPayload)(props.setting.discount);
+    props.totalAmountFunc(totalPayload, discountPayload);
+  };
+
   return (
     <div className={"setting"}>
       <div className={"setting-content"}>
         <div className={"setting-common setting-content_left"}>
           <p className={"heading"}>Расчет ремонта</p>
-          {props.repairs.map((repair: any) => {
+          {props.setting.repairs.map((repair: any) => {
             return (
               <div key={repair.id} className={"wrapper-input"}>
                 <label>
                   <input className={"setting-list"} type="radio" id={"name-box"} checked={repairs === repair.id}
-                         onChange={() => repairsChangeInput(repair.id)}/>
+                         onChange={() => repairsChangeInput(repair.id, repair.coefficient)}/>
                   {repair.title}
                 </label>
               </div>
@@ -72,7 +88,7 @@ const Setting = (props: IProps) => {
         <div className={"setting-common setting-content_right"}>
           <div>
             <p className={"heading"}>Тип дома</p>
-            {props.typeHouse.map((home: any, homeId: number) => {
+            {props.setting.typeHouse.map((home: any, homeId: number) => {
               return (
                 <div key={homeId} className={"wrapper-input"}>
                   <label htmlFor="home-box">
@@ -87,10 +103,10 @@ const Setting = (props: IProps) => {
           <div>
             <p className={"heading"}>Колличество комнат</p>
             <div className={"room-items"}>
-              {props.quantity.map((room: any, roomId: number) => {
+              {props.setting.quantity.map((room: any, roomId: number) => {
                 return (
                   <div key={roomId}
-                       onClick={() => roomButton(room.id,room.price)}>
+                       onClick={() => roomButton(room.id, room.price)}>
                     {rooms === room.id ? (
                       <div className={"room-items_checked"}>
                         {room.title}
@@ -114,16 +130,19 @@ const Setting = (props: IProps) => {
           <div className={"flat-meter"}>м²</div>
         </div>
       </div>
+      <div>
+        <button onClick={resultBtn}>Рассчитать</button>
+        <div>цена{props.setting.totalAmount}</div>
+        <div>скидка{props.setting.totalDiscount}</div>
+      </div>
     </div>
+
   )
 };
 
 const mapStateToProps = (state: RootState) => {
   return {
-    repairs: state.setting.repairs,
-    typeHouse: state.setting.typeHouse,
-    quantity: state.setting.quantity,
-    flat: state.setting.flat,
+    setting: state.setting,
   }
 };
 
@@ -131,7 +150,8 @@ const mapDispatchToProps = {
   repairsChange,
   homesChange,
   roomsButton,
-  flatChange
+  flatChange,
+  totalAmountFunc,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Setting);

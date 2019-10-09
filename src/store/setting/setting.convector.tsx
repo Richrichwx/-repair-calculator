@@ -1,4 +1,4 @@
-import { always, compose, cond, equals, evolve, map, prop, T } from "ramda";
+import { always, compose, cond, equals, evolve, map, multiply, prop, T } from "ramda";
 import { ISetting } from "../../models/setting.model";
 
 type Repair = ISetting;
@@ -18,6 +18,7 @@ const transformRepairs: TransformRepairs = (id: any) => (item: Repair) =>
     prop('id') as any,
   )(item);
 
+
 export const checkedRepair = (actionId: any) =>
   compose(map(transformRepairs(actionId)));
 
@@ -27,3 +28,23 @@ export const checkedHomes = (actionId: any) =>
 
 export const checkedRooms = (actionId: any) =>
   compose(map(transformRepairs(actionId)));
+
+
+export const commonResultFunc = (flat: number) => (price: any) => (coefficient: number) => {
+  if (flat >= 10 && flat <= 99) {
+    const result = multiply(flat)(price.small);
+    return result * (coefficient);
+  }
+  else if (flat < 10) {
+    return false
+  }
+  else {
+    const result = multiply(flat)(price.large);
+    return result * (coefficient)
+  }
+};
+
+export const commonDiscount = (total: any) => (discount: number) => {
+  return total * discount
+};
+

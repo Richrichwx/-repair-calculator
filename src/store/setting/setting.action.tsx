@@ -1,6 +1,7 @@
-export const repairsChange = (dataRepairs: any) => ({
+export const repairsChange = (dataRepairs: any,coefficient: number) => ({
   type: 'REPAIRS_CHANGE',
-  dataRepairs
+  dataRepairs,
+  coefficient
 });
 
 export const homesChange = (dataHomes: any) => ({
@@ -8,12 +9,21 @@ export const homesChange = (dataHomes: any) => ({
   dataHomes
 });
 
-export const roomsButton = (dataRooms: any) => ({
+export const roomsButton = (dataRooms: any, price: any) => ({
   type: 'ROOMS_BUTTON',
-  dataRooms
+  dataRooms,
+  price,
 });
 
-export const flatChange = (flat: any) => ({
+export const flatChange = (flat: number) => ({
   type: 'FLAT_CHANGE',
   flat
 });
+
+export const totalAmountFunc = (total: number, discount: number) => ({
+  type: 'TOTAL_AMOUNT_FUNC',
+  total,
+  discount
+});
+
+

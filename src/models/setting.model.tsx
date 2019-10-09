@@ -2,8 +2,12 @@ export interface ISettings {
   repairs: ISetting[],
   typeHouse: ISetting[],
   quantity: ISetting[],
-  flat: number,
-}
+  flat: any,
+  coefficientActive: number,
+  price: any,
+  totalAmount: number,
+  discount: number,
+  totalDiscount: number}
 
 export interface ISetting {
   id: number,
