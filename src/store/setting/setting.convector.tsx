@@ -18,17 +18,8 @@ const transformRepairs: TransformRepairs = (id: any) => (item: Repair) =>
     prop('id') as any,
   )(item);
 
-
-export const checkedRepair = (actionId: any) =>
+export const checkedCommon = (actionId: any) =>
   compose(map(transformRepairs(actionId)));
-
-
-export const checkedHomes = (actionId: any) =>
-  compose(map(transformRepairs(actionId)));
-
-export const checkedRooms = (actionId: any) =>
-  compose(map(transformRepairs(actionId)));
-
 
 export const commonResultFunc = (flat: number) => (price: any) => (coefficient: number) => {
   if (flat >= 10 && flat <= 99) {

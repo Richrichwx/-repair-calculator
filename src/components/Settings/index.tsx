@@ -8,13 +8,10 @@ import {
   flatChange, totalAmountFunc,
 } from "../../store/setting/setting.action";
 import {
-  checkedHomes,
-  checkedRepair,
-  checkedRooms,
+  checkedCommon,
   commonDiscount,
   commonResultFunc,
 } from "../../store/setting/setting.convector";
-import { find, propEq, multiply } from "ramda";
 import { ISettings } from "../../models/setting.model";
 
 interface IProps extends StoreProps, DispatchProps {
@@ -40,19 +37,19 @@ const Setting = (props: IProps) => {
 
   const repairsChangeInput = (id: number, coefficient: any) => {
     setRepairs(id);
-    const repairsData = checkedRepair(id)(props.setting.repairs);
+    const repairsData = checkedCommon(id)(props.setting.repairs);
     props.repairsChange(repairsData, coefficient);
   };
 
   const homeChangeInput = (id: number) => {
     setHomes(id);
-    const homesData = checkedHomes(id)(props.setting.typeHouse);
+    const homesData = checkedCommon(id)(props.setting.typeHouse);
     props.homesChange(homesData)
   };
 
   const roomButton = (id: number, price: any) => {
     setRooms(id);
-    const quantityData = checkedRooms(id)(props.setting.quantity);
+    const quantityData = checkedCommon(id)(props.setting.quantity);
     props.roomsButton(quantityData, price);
   };
 
