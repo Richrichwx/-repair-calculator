@@ -7,7 +7,8 @@ export interface ISettings {
   price: any,
   totalAmount: number,
   discount: number,
-  totalDiscount: number}
+  totalDiscount: number
+}
 
 export interface ISetting {
   id: number,

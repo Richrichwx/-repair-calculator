@@ -170,9 +170,14 @@ code {
 .flat-container {
     display: flex;
     justify-content: center;
+    padding: 5px 0;
 }
 
 .slider-input {
     width: 290px;
+}
+
+.resultsContainer {
+    display: flex;
 }
 

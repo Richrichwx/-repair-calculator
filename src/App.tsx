@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import FeedBack from "./components/FeedBack";
-import Setting from "./components/Settings";
+import SettingContainer from "./containers/SettingsContainer";
+import ResultsContainer from './containers/ResultsContainer';
 
 const App = () => {
   return (
     <div className="App">
-      <Setting />
+      <SettingContainer />
+      <ResultsContainer />
       <FeedBack />
     </div>
   );
