@@ -7,7 +7,7 @@ interface IProps  {
 }
 
 const Repairs = (props: IProps) => {
-  const [repairs, setRepairs] = useState(1);
+  const [repairs, setRepairs] = useState(0);
 
   const repairsChangeInput = (id: number, coefficient: any) => {
     setRepairs(id);

@@ -5,7 +5,7 @@ interface IProps  {
 }
 
 const Area = (props: IProps) => {
-  const [flat, setFlat] = useState(0);
+  const [flat, setFlat] = useState('');
 
   const changeFlat = (e: any) => {
     setFlat(e.currentTarget.value);

@@ -6,7 +6,7 @@ interface IProps  {
   typeHouse: any[],
 }
 const TypeHome = (props: IProps) => {
-  const [homes, setHomes] = useState(1);
+  const [homes, setHomes] = useState(0);
 
   const homeChangeInput = (id: number) => {
     setHomes(id);

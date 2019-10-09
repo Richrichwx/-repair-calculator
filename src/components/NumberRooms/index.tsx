@@ -7,7 +7,7 @@ interface IProps  {
 }
 
 const NumberRooms = (props: IProps) => {
-  const [rooms, setRooms] = useState(1);
+  const [rooms, setRooms] = useState(0);
 
   const roomButton = (id: number, price: any) => {
     setRooms(id);
