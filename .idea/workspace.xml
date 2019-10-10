@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8415cfa0-804f-4522-aab4-fee97b427fb1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Area/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Area/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Repairs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Repairs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResultsButton/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResultsButton/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ResultsContainer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ResultsContainer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/SettingsContainer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SettingsContainer/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/setting/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/setting/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/setting/setting.action.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/setting/setting.action.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,29 +21,8 @@
       <file leaf-file-name="index.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Area/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Forms/FeedBackForm/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FeedBack/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="49" />
+            <state>
+              <caret column="26" selection-start-column="26" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -60,8 +30,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="202" column="23" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="23" />
+            <state relative-caret-position="532">
+              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
             </state>
           </provider>
         </entry>
@@ -111,9 +81,9 @@
         <option value="$PROJECT_DIR$/src/store/setting/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Repairs/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/NumberRooms/index.tsx" />
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/Forms/Slider/index.ts" />
         <option value="$PROJECT_DIR$/src/components/Forms/Slider/index.tsx" />
+        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/components/Area/index.tsx" />
       </list>
     </option>
@@ -326,12 +296,12 @@
       <workItem from="1569709253327" duration="43039000" />
       <workItem from="1569950094678" duration="23996000" />
       <workItem from="1570119618797" duration="1395000" />
-      <workItem from="1570563777029" duration="38661000" />
+      <workItem from="1570563777029" duration="41456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151893000" />
+    <option name="totallyTimeSpent" value="154688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,7 +317,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -355,7 +325,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32705882" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32705882" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -698,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="202" column="23" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Forms/FormControls/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -739,10 +702,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Area/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>

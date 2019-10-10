@@ -1,6 +1,6 @@
-import React  from 'react';
+import React from 'react';
 
-interface IProps  {
+interface IProps {
   flatChange: HandlerDispatch;
   flat: number,
 }
@@ -15,10 +15,10 @@ const Area = (props: IProps) => {
     <div>
       <p className={"heading heading-flat"}>Площадь квартиры</p>
       <div className={"flat-container"}>
+        <div className={"flat-meter"}>{props.flat}м²</div>
         <div className={"wrapper-flat"}>
-          <div className={"flat-meter"}>{props.flat}м²</div>
           <input type="range" className={"range"} min={10} max={150}
-                  value={props.flat} step="1" onChange={changeFlat}/>
+                 value={props.flat} step="1" onChange={changeFlat}/>
         </div>
       </div>
     </div>
