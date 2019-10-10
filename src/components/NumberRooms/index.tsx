@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { checkedCommon } from "../../store/setting/setting.convector";
+import { checkedCommon } from "../../store/setting/setting.сonveyor";
 
 interface IProps  {
   roomsButton: HandlerDispatch;

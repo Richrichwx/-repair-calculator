@@ -1,5 +1,5 @@
 import React from 'react';
-import { commonDiscount, commonResultFunc } from "../../store/setting/setting.convector";
+import { commonDiscount, commonResultFunc } from "../../store/setting/setting.сonveyor";
 
 interface IProps  {
   totalAmountFunc: HandlerDispatch;
