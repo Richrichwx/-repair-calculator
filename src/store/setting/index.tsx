@@ -47,7 +47,7 @@ const initialState: ISettings = {
       price: {
         small: 3000,
         large: 2500,
-      }
+      },
     },
     {
       id: 2,
@@ -56,7 +56,7 @@ const initialState: ISettings = {
       price: {
         small: 2950,
         large: 2450,
-      }
+      },
     },
     {
       id: 3,
@@ -65,7 +65,7 @@ const initialState: ISettings = {
       price: {
         small: 2900,
         large: 2400,
-      }
+      },
     },
     {
       id: 4,
@@ -74,7 +74,7 @@ const initialState: ISettings = {
       price: {
         small: 2850,
         large: 2350,
-      }
+      },
     },
     {
       id: 5,
@@ -83,11 +83,11 @@ const initialState: ISettings = {
       price: {
         small: 2800,
         large: 2300,
-      }
+      },
     },
   ],
-  flat: 0,
-  coefficientActive: 0,
+  flat: 10,
+  coefficientActive: 1.84,
   price: {},
   totalAmount: 0,
   discount: 0.11,
@@ -100,7 +100,7 @@ export default function (state: ISettings = initialState, action: any) {
       return {
         ...state,
         repairs: action.dataRepairs,
-        coefficientActive: action.coefficient
+        coefficientActive: action.coefficient,
       }
     }
     case "HOMES_CHANGE": {
@@ -126,7 +126,12 @@ export default function (state: ISettings = initialState, action: any) {
       return {
         ...state,
         totalAmount: action.total,
-        totalDiscount: action.discount
+      }
+    }
+    case "TOTAL_DISCOUNT_FUNC": {
+      return {
+        ...state,
+        totalDiscount: action.discount,
       }
     }
     default:

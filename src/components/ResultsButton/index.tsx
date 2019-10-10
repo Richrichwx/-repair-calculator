@@ -3,6 +3,7 @@ import { commonDiscount, commonResultFunc } from "../../store/setting/setting.co
 
 interface IProps  {
   totalAmountFunc: HandlerDispatch;
+  totalDiscountFunc: HandlerDispatch,
   flat: number,
   price: any,
   discount: number,
@@ -12,8 +13,9 @@ const ResultsButton = (props: IProps) => {
 
   const resultBtn = () => {
     const totalPayload = commonResultFunc(props.flat)(props.price)(props.coefficientActive);
+    props.totalAmountFunc(totalPayload);
     const discountPayload = commonDiscount(totalPayload)(props.discount);
-    props.totalAmountFunc(totalPayload, discountPayload);
+    props.totalDiscountFunc(discountPayload);
   };
 
   return (

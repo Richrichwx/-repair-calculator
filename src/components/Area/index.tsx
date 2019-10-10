@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React  from 'react';
 
 interface IProps  {
   flatChange: HandlerDispatch;
+  flat: number,
 }
 
 const Area = (props: IProps) => {
-  const [flat, setFlat] = useState('');
 
   const changeFlat = (e: any) => {
-    setFlat(e.currentTarget.value);
     props.flatChange(e.currentTarget.value);
   };
 
   return (
     <div>
+      <p className={"heading heading-flat"}>Площадь квартиры</p>
       <div className={"flat-container"}>
-        <p className={"heading heading-flat"}>Площадь квартиры</p>
         <div className={"wrapper-flat"}>
-          <input type="number" className={"flat-input"} value={flat} onChange={changeFlat}/>
-          <div className={"flat-meter"}>м²</div>
+          <div className={"flat-meter"}>{props.flat}м²</div>
+          <input type="range" className={"range"} min={10} max={150}
+                  value={props.flat} step="1" onChange={changeFlat}/>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ const SettingContainer = (props: IProps) => {
         </div>
       </div>
       <div className={"flat-container"}>
-        <Area flatChange={props.flatChange}/>
+        <Area flatChange={props.flatChange} flat={props.setting.flat} />
       </div>
     </div>
   )

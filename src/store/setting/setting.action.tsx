@@ -20,9 +20,13 @@ export const flatChange = (flat: number) => ({
   flat
 });
 
-export const totalAmountFunc = (total: number, discount: number) => ({
+export const totalAmountFunc = (total: number) => ({
   type: 'TOTAL_AMOUNT_FUNC',
-  total,
+  total
+});
+
+export const totalDiscountFunc = ( discount: number) => ({
+  type: 'TOTAL_DISCOUNT_FUNC',
   discount
 });
 
