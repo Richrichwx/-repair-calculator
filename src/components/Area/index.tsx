@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import 'antd/dist/antd.css';
+import { Slider, Row, Col, InputNumber } from 'antd';
 
 interface IProps {
   flatChange: HandlerDispatch;
@@ -7,18 +9,34 @@ interface IProps {
 
 const Area = (props: IProps) => {
 
-  const changeFlat = (e: any) => {
-    props.flatChange(e.currentTarget.value);
+  const changeFlat = (value: any) => {
+    props.flatChange(value);
   };
 
   return (
     <div>
       <p className={"heading heading-flat"}>Площадь квартиры</p>
       <div className={"flat-container"}>
-        <div className={"flat-meter"}>{props.flat}м²</div>
         <div className={"wrapper-flat"}>
-          <input type="range" className={"range"} min={10} max={150}
-                 value={props.flat} step="1" onChange={changeFlat}/>
+          <Row>
+            <Col span={12}>
+              <Slider
+                min={10}
+                max={200}
+                onChange={changeFlat}
+                value={props.flat}
+              />
+            </Col>
+            <Col span={4}>
+              <InputNumber
+                min={10}
+                max={200}
+                style={{ marginLeft: 16 }}
+                value={props.flat}
+                onChange={changeFlat}
+              />
+            </Col>
+          </Row>
         </div>
       </div>
     </div>

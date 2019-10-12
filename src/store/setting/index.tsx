@@ -86,7 +86,7 @@ const initialState: ISettings = {
       },
     },
   ],
-  flat: 10,
+  flat: 0,
   coefficientActive: 1.84,
   price: {},
   totalAmount: 0,
