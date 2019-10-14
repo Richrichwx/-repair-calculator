@@ -16,7 +16,7 @@ const Results = (props: IProps) => {
       </div>
       <div className={"info"}>
         <div>Скидка:<span>
-          {props.settingResult.totalDiscount} {rub}
+          -{props.settingResult.totalDiscount} {rub}
         </span>
         </div>
       </div>

@@ -12,7 +12,6 @@ import Repairs from '../../components/Repairs/index';
 import TypeHome from '../../components/TypeHome/index';
 import NumberRooms from '../../components/NumberRooms/index';
 import Area from "../../components/Area/index";
-import { commonDiscount, commonResultFunc } from "../../store/setting/setting.сonveyor";
 
 interface IProps extends StoreProps, DispatchProps {
 }
