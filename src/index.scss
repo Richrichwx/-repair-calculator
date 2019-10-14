@@ -1,195 +1,248 @@
 @import './styles/inputRadio.scss';
+
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 
 .form-field {
-    padding: 14px 20px;
-    border-radius: 30px;
-    margin: 10px;
-    outline: none;
-    border: 2px solid #224a86;
-    display: block;
-    font-size: 17px;
-    font-family: Gill Sans, sans-serif;
+  padding: 14px 20px;
+  border-radius: 30px;
+  margin: 10px;
+  outline: none;
+  border: 2px solid #224a86;
+  display: block;
+  font-size: 17px;
+  font-family: Gill Sans, sans-serif;
 }
 
 .form-field::placeholder {
-    font-size: 17px;
-    font-family: Gill Sans, sans-serif;
-    font-weight: 600;
-    font-variant: normal;
+  font-size: 17px;
+  font-family: Gill Sans, sans-serif;
+  font-weight: 600;
+  font-variant: normal;
 }
 
 .form-errors {
-    text-align: center;
+  text-align: center;
 }
 
 .errors {
-    border-bottom: 2px solid #fb3439;
-    color: #224a86;
-    margin: 0 30px;
-    font-size: 16px;
+  border-bottom: 2px solid #fb3439;
+  color: #224a86;
+  margin: 0 30px;
+  font-size: 16px;
 }
 
 .sending {
-    background: #224a86;
-    border: 2px solid #224a86;
-    font-size: 17px;
-    color: #ffffff;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    padding: 14px 20px;
-    border-radius: 30px;
-    margin: 15px;
+  background: #224a86;
+  border: 2px solid #224a86;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  padding: 14px 20px;
+  border-radius: 30px;
+  margin: 15px;
 }
 
 .setting {
-    margin-top: 20px;
-    background: #f3f3f3;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  margin-top: 20px;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .setting-content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .setting-common {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .heading {
-    font-size: 16px;
-    font-weight: 700;
-    color: #272727;
-    margin: 0 0 13px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #272727;
+  margin: 0 0 13px 0;
 }
 
 .heading-flat {
-    text-align: center;
-    margin: 5px 0;
+  text-align: center;
+  margin: 5px 0;
 }
 
 .wrapper-input {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .wrapper-input label {
-    color: #535353;
-    font-weight: 600;
-    font-size: 14px;
+  color: #535353;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .room-items {
-    display: flex;
+  display: flex;
 }
 
 .room-items_item {
-    background: #dddddd;
-    padding: 4px 7px;
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
-    color: #535353;
+  background: #dddddd;
+  padding: 4px 7px;
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #535353;
 }
 
 .room-items_item:hover {
-    background: #172457;
-    color: #ffffff;
+  background: #172457;
+  color: #ffffff;
 }
 
 .room-items_checked {
-    background: #172457;
-    padding: 4px 7px;
-    font-size: 13px;
-    cursor: pointer;
-    color: #ffffff;
-    margin: 0 5px;
+  background: #172457;
+  padding: 4px 7px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #ffffff;
+  margin: 0 5px;
 }
 
 .centimeters {
-    padding: 5px;
-    background: #ffffff;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid #172457;
-    margin-right: 5px;
+  padding: 5px;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #172457;
+  margin-right: 5px;
 }
 
 .feeBack-form {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .form {
-    width: 380px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .setting-list {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .wrapper-flat {
-    padding: 0 15px;
-    display: flex;
+  padding: 0 15px;
+  display: flex;
+  width: 365px;
+
+
+  .ant-input-number-input {
+    width: 60px;
+    border: 1px solid #0e45b1;
+    color: #73808a;
+    border-radius: 0;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+  }
+
+  .ant-input-number {
+    width: 60px;
+  }
+
+  .ant-col-12 {
+    width: 264px;
+    margin-left: 15px;
+  }
+
+  .ant-slider-track {
+    background-color: #0f45b1;
+    border-radius: 25px;
+    height: 5px;
+  }
+
+  .ant-slider-rail {
+    background-color: #ffffff;
+  }
+
+  .ant-slider:hover .ant-slider-track {
+    background-color: #0f45b1;
+    border-radius: 25px;
+    height: 5px;
+  }
+
+  .ant-slider-handle {
+    background-color: #e80b0b;
+    border: none;
+    &:focus {
+      box-shadow: none
+    }
+  }
+
+  .ant-slider-handle-click-focused {
+    background-color: #e80b0b;
+    border: none;
+  }
 }
 
 .flat-input {
-    border: 2px solid #172457;
-    width: 90px;
-    padding: 3px 15px;
-    border-radius: 30px;
-    outline: none;
-    font-size: 17px;
-    font-family: Gill Sans, sans-serif;
+  border: 2px solid #172457;
+  width: 90px;
+  padding: 3px 15px;
+  border-radius: 30px;
+  outline: none;
+  font-size: 17px;
+  font-family: Gill Sans, sans-serif;
 }
 
 .flat-meter {
-    margin-left: 5px;
-    font-size: 20px;
+  margin-left: 5px;
+  font-size: 20px;
 }
 
 .flat-container {
-    display: flex;
-    justify-content: center;
-    padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
 }
 
 .slider-input {
-    width: 290px;
+  width: 290px;
 }
 
 .resultsContainer {
-    display: flex;
+  display: flex;
 }
 
 .flat-meter {
-    border: 1px solid #d7dbdd;
-    color: #333;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    padding: .4em .6em;
-    border-radius: 3px;
+  border: 1px solid #d7dbdd;
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  padding: .4em .6em;
+  border-radius: 3px;
 }
+
 
 
 

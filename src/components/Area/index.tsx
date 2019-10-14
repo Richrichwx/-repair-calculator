@@ -19,21 +19,22 @@ const Area = (props: IProps) => {
       <div className={"flat-container"}>
         <div className={"wrapper-flat"}>
           <Row>
+            <Col span={4}>
+              <InputNumber
+                min={10}
+                max={200}
+                style={{ marginRight: 16 }}
+                value={props.flat}
+                onChange={changeFlat}
+                formatter={value => `${value} м²`}
+              />
+            </Col>
             <Col span={12}>
               <Slider
                 min={10}
                 max={200}
                 onChange={changeFlat}
                 value={props.flat}
-              />
-            </Col>
-            <Col span={4}>
-              <InputNumber
-                min={10}
-                max={200}
-                style={{ marginLeft: 16 }}
-                value={props.flat}
-                onChange={changeFlat}
               />
             </Col>
           </Row>
