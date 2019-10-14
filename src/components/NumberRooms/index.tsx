@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { checkedCommon } from "../../store/setting/setting.сonveyor";
 
 interface IProps  {
@@ -7,10 +7,8 @@ interface IProps  {
 }
 
 const NumberRooms = (props: IProps) => {
-  const [rooms, setRooms] = useState(0);
 
   const roomButton = (id: number, price: any) => {
-    setRooms(id);
     const quantityData = checkedCommon(id)(props.quantity);
     props.roomsButton(quantityData, price);
   };
@@ -19,11 +17,11 @@ const NumberRooms = (props: IProps) => {
     <div>
       <p className={"heading"}>Колличество комнат</p>
       <div className={"room-items"}>
-        {props.quantity.map((room: any, roomId: number) => {
+        {props.quantity.map((room: any) => {
           return (
-            <div key={roomId}
+            <div key={room.id}
                  onClick={() => roomButton(room.id, room.price)}>
-              {rooms === room.id ? (
+              {room.check === true ? (
                 <div className={"room-items_checked"}>
                   {room.title}
                 </div>

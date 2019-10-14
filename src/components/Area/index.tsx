@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Slider, Row, Col, InputNumber } from 'antd';
 
 interface IProps {
+
   flatChange: HandlerDispatch;
   flat: number,
 }

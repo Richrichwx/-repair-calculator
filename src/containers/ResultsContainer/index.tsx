@@ -22,11 +22,11 @@ interface StoreProps {
 
 const ResultsContainer = (props: IProps) => {
   return (
-    <div className={"resultsContainer"}>
-      <Results totalAmount={props.setting.totalAmount} totalDiscount={props.setting.totalDiscount}/>
-      <ResultsButton flat={props.setting.flat} price={props.setting.price}
-                     coefficientActive={props.setting.coefficientActive}
-                     discount={props.setting.discount} totalAmountFunc={props.totalAmountFunc} totalDiscountFunc={props.totalDiscountFunc}/>
+    <div className={"containerCommon results"}>
+      <div className={"contentCommon results-content"}>
+        <Results settingResult={props.setting}/>
+        <ResultsButton setting={props.setting} totalAmountFunc={props.totalAmountFunc} totalDiscountFunc={props.totalDiscountFunc}/>
+      </div>
     </div>
   )
 };

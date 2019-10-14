@@ -26,7 +26,7 @@ const FeedBackForm = (props: any) => {
           label={"Введите номер телефона"}
           validate={[required, phoneNumber]}
         />
-        <button className={"sending"} type="submit">Отправить</button>
+        <button className={"sendingCommon sending"} type="submit">Отправить</button>
       </form>
     </div>
   )

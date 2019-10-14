@@ -40,3 +40,4 @@ export const commonDiscount = (total: any) => (discount: number) => {
   return total * discount
 };
 
+

@@ -1,15 +1,25 @@
 import React from 'react';
+import { ISettings } from "../../models/setting.model";
 
-interface IProps  {
-  totalAmount: number,
-  totalDiscount: number
+interface IProps {
+  settingResult: ISettings
 }
 
 const Results = (props: IProps) => {
+  const rub = 'рубл.';
   return (
-    <div>
-      <div>цена{props.totalAmount}</div>
-      <div>скидка{props.totalDiscount}</div>
+    <div className={"resultsInfo"}>
+      <div className={"info"}>
+        <div>Цена:<span>
+          {props.settingResult.totalAmount} {rub}
+        </span></div>
+      </div>
+      <div className={"info"}>
+        <div>Скидка:<span>
+          {props.settingResult.totalDiscount} {rub}
+        </span>
+        </div>
+      </div>
     </div>
   )
 };

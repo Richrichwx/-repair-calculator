@@ -11,7 +11,7 @@ const initialState: ISettings = {
     {
       id: 2,
       title: 'Капитальный',
-      check: false,
+      check: true,
       coefficient: 1.67,
     },
     {
@@ -79,19 +79,22 @@ const initialState: ISettings = {
     {
       id: 5,
       title: '5',
-      check: false,
+      check: true,
       price: {
         small: 2800,
         large: 2300,
       },
     },
   ],
-  flat: 40,
-  coefficientActive: 1.84,
-  price: {},
-  totalAmount: 0,
+  flat: 120,
+  coefficientActive: 1.67,
+  price: {
+    small: 2800,
+    large: 2300
+  },
+  totalAmount: 460920,
   discount: 0.11,
-  totalDiscount: 0,
+  totalDiscount: 50701.2,
 };
 
 export default function (state: ISettings = initialState, action: any) {

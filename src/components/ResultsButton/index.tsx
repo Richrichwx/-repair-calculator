@@ -1,26 +1,25 @@
 import React from 'react';
 import { commonDiscount, commonResultFunc } from "../../store/setting/setting.сonveyor";
+import { ISettings } from "../../models/setting.model";
 
 interface IProps  {
   totalAmountFunc: HandlerDispatch;
   totalDiscountFunc: HandlerDispatch,
-  flat: number,
-  price: any,
-  discount: number,
-  coefficientActive: number
+  setting: ISettings
 }
+
 const ResultsButton = (props: IProps) => {
 
   const resultBtn = () => {
-    const totalPayload = commonResultFunc(props.flat)(props.price)(props.coefficientActive);
+    const totalPayload = commonResultFunc(props.setting.flat)(props.setting.price)(props.setting.coefficientActive);
     props.totalAmountFunc(totalPayload);
-    const discountPayload = commonDiscount(totalPayload)(props.discount);
+    const discountPayload = commonDiscount(totalPayload)(props.setting.discount);
     props.totalDiscountFunc(discountPayload);
   };
 
   return (
     <div>
-      <button onClick={resultBtn}>Рассчитать</button>
+      <button className={"sendingCommon calculateButton"} onClick={resultBtn}>Рассчитать</button>
     </div>
   )
 };

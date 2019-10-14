@@ -5,13 +5,14 @@ import {
   homesChange,
   repairsChange,
   roomsButton,
-  flatChange,
+  flatChange, totalDiscountFunc, totalAmountFunc,
 } from "../../store/setting/setting.action";
 import { ISettings } from "../../models/setting.model";
 import Repairs from '../../components/Repairs/index';
 import TypeHome from '../../components/TypeHome/index';
 import NumberRooms from '../../components/NumberRooms/index';
 import Area from "../../components/Area/index";
+import { commonDiscount, commonResultFunc } from "../../store/setting/setting.сonveyor";
 
 interface IProps extends StoreProps, DispatchProps {
 }
@@ -21,6 +22,8 @@ interface DispatchProps {
   homesChange: HandlerDispatch;
   roomsButton: HandlerDispatch;
   flatChange: HandlerDispatch;
+  totalAmountFunc: HandlerDispatch;
+  totalDiscountFunc: HandlerDispatch
 }
 
 interface StoreProps {
@@ -28,10 +31,9 @@ interface StoreProps {
 }
 
 const SettingContainer = (props: IProps) => {
-
   return (
-    <div className={"setting"}>
-      <div className={"setting-content"}>
+    <div className={"containerCommon setting"}>
+      <div className={"contentCommon setting-content"}>
         <div className={"setting-common setting-content_left"}>
           <Repairs repairsChange={props.repairsChange} repairs={props.setting.repairs}/>
         </div>
@@ -45,7 +47,7 @@ const SettingContainer = (props: IProps) => {
         </div>
       </div>
       <div className={"flat-container"}>
-        <Area flatChange={props.flatChange} flat={props.setting.flat} />
+        <Area flatChange={props.flatChange} flat={props.setting.flat}/>
       </div>
     </div>
   )
@@ -62,6 +64,8 @@ const mapDispatchToProps = {
   homesChange,
   roomsButton,
   flatChange,
+  totalAmountFunc,
+  totalDiscountFunc,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingContainer);
