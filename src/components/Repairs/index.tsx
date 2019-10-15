@@ -1,5 +1,6 @@
 import React from 'react';
 import { checkedCommon } from "../../store/setting/setting.сonveyor";
+import { Radio } from 'antd';
 
 
 interface IProps  {
@@ -21,7 +22,7 @@ const Repairs = (props: IProps) => {
         return (
           <div key={repair.id} className={"wrapper-input"}>
             <label>
-              <input className={"setting-list"} type="radio" id={"name-box"} checked={repair.check === true}
+              <Radio className={"setting-list"} type="radio" id={"name-box"} checked={repair.check === true}
                      onChange={() => repairsChangeInput(repair.id, repair.coefficient)}/>
               {repair.title}
             </label>

@@ -290,6 +290,25 @@ code {
   border-radius: 3px;
 }
 
+.wrapper-input {
+  .ant-radio-inner::after {
+    background-color: #e80b0b;
+  }
+    .ant-radio-checked::after {
+      border: 2px solid #0f45b1;
+    }
+  .ant-radio-checked .ant-radio-inner {
+    border-color: #0f45b1;
+  }
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: none;
+  }
+  .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
+    border-color: #0f45b1;
+  }
+}
+
+
 
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { checkedCommon } from "../../store/setting/setting.сonveyor";
+import { Radio } from 'antd';
 
 interface IProps  {
   homesChange: HandlerDispatch;
@@ -20,7 +21,7 @@ const TypeHome = (props: IProps) => {
         return (
           <div key={homeId} className={"wrapper-input"}>
             <label htmlFor="home-box">
-              <input className={"setting-list"} type="radio" id={"home-box"} checked={homes === home.id}
+              <Radio className={"setting-list"} type="radio" id={"home-box"} checked={homes === home.id}
                      onChange={() => homeChangeInput(home.id)}/>
               {home.title}
             </label>
