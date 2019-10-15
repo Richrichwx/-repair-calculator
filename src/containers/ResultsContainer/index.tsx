@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { RootState } from "../../core/reducers";
 import {
+  periodResult,
   totalAmountFunc, totalDiscountFunc,
 } from "../../store/setting/setting.action";
 import { ISettings } from "../../models/setting.model";
@@ -13,7 +14,8 @@ interface IProps extends StoreProps, DispatchProps {
 
 interface DispatchProps {
   totalAmountFunc: HandlerDispatch;
-  totalDiscountFunc: HandlerDispatch
+  totalDiscountFunc: HandlerDispatch;
+  periodResult: HandlerDispatch;
 }
 
 interface StoreProps {
@@ -23,9 +25,11 @@ interface StoreProps {
 const ResultsContainer = (props: IProps) => {
   return (
     <div className={"containerCommon results"}>
+      <ResultsButton setting={props.setting} totalAmountFunc={props.totalAmountFunc}
+                     totalDiscountFunc={props.totalDiscountFunc}
+                     periodResult={props.periodResult}/>
       <div className={"contentCommon results-content"}>
         <Results settingResult={props.setting}/>
-        <ResultsButton setting={props.setting} totalAmountFunc={props.totalAmountFunc} totalDiscountFunc={props.totalDiscountFunc}/>
       </div>
     </div>
   )
@@ -39,7 +43,8 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = {
   totalAmountFunc,
-  totalDiscountFunc
+  totalDiscountFunc,
+  periodResult
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultsContainer);

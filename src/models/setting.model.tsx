@@ -8,6 +8,7 @@ export interface ISettings {
   totalAmount: number,
   discount: number,
   totalDiscount: number,
+  periodDefault: number
 }
 
 export interface ISetting {

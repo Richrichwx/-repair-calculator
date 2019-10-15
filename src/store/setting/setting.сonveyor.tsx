@@ -1,4 +1,4 @@
-import { always, compose, cond, equals, evolve, map, multiply, prop, T } from "ramda";
+import { always, compose, cond, equals, evolve, map, multiply, prop, T} from "ramda";
 import { ISetting } from "../../models/setting.model";
 
 type Repair = ISetting;
@@ -39,5 +39,29 @@ export const commonResultFunc = (flat: number) => (price: any) => (coefficient: 
 export const commonDiscount = (total: any) => (discount: number) => {
   return total * discount
 };
+
+export const periodSum = (totalAmount: any) => {
+  if(totalAmount > 50000 && totalAmount <=100000) {
+    return 14
+  }
+  else if(totalAmount >= 100000 && totalAmount <=150000) {
+    return 21
+  }
+  else if(totalAmount >= 150000 && totalAmount <=200000) {
+    return 28
+  }
+  else if(totalAmount >= 200000 && totalAmount <= 250000) {
+    return 28
+  }
+  else if(totalAmount >= 250000 && totalAmount <=350000) {
+    return 30
+  }
+  else if(totalAmount >= 350000 && totalAmount <=450000) {
+    return 45
+  } else {
+    return 50
+  }
+};
+
 
 

@@ -11,13 +11,13 @@ const initialState: ISettings = {
     {
       id: 2,
       title: 'Капитальный',
-      check: true,
+      check: false,
       coefficient: 1.67,
     },
     {
       id: 3,
       title: 'Под ключ',
-      check: false,
+      check: true,
       coefficient: 1.84,
     },
     {
@@ -87,14 +87,15 @@ const initialState: ISettings = {
     },
   ],
   flat: 120,
-  coefficientActive: 1.67,
+  coefficientActive: 1.84,
   price: {
     small: 2800,
-    large: 2300
+    large: 2300,
   },
-  totalAmount: 460920,
+  totalAmount: 507840,
   discount: 0.11,
-  totalDiscount: 50701.2,
+  totalDiscount: -55862.4,
+  periodDefault: 50
 };
 
 export default function (state: ISettings = initialState, action: any) {
@@ -135,6 +136,12 @@ export default function (state: ISettings = initialState, action: any) {
       return {
         ...state,
         totalDiscount: action.discount,
+      }
+    }
+    case "PERIOD_RESULT": {
+      return {
+        ...state,
+        periodDefault: action.period,
       }
     }
     default:

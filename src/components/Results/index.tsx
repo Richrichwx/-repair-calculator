@@ -7,17 +7,28 @@ interface IProps {
 
 const Results = (props: IProps) => {
   const rub = 'рубл.';
+  const day = 'дней';
   return (
     <div className={"resultsInfo"}>
       <div className={"info"}>
-        <div>Цена:<span>
-          {props.settingResult.totalAmount} {rub}
-        </span></div>
+        <p>Цена:</p>
+        <div className={"infoText"}>
+          {props.settingResult.totalAmount}
+          <span>{rub}</span>
+        </div>
       </div>
       <div className={"info"}>
-        <div>Скидка:<span>
-          -{props.settingResult.totalDiscount} {rub}
-        </span>
+        <p>Скидка:</p>
+        <div className={"infoText"}>
+          {props.settingResult.totalDiscount}
+          <span>{rub}</span>
+        </div>
+      </div>
+      <div className={"info"}>
+        <p>Срок:</p>
+        <div className={"infoText"}>
+          {props.settingResult.periodDefault}
+          <span>{day}</span>
         </div>
       </div>
     </div>

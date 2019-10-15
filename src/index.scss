@@ -1,5 +1,3 @@
-@import './styles/inputRadio.scss';
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -44,14 +42,14 @@ code {
 }
 
 .sendingCommon {
-   background: #224a86;
-   border: 2px solid #224a86;
-   color: #ffffff;
-   font-weight: 600;
-   cursor: pointer;
-   outline: none;
-   margin: 15px;
- }
+  background: #224a86;
+  border: 2px solid #224a86;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  margin: 15px;
+}
 
 .sending {
   font-size: 17px;
@@ -63,12 +61,12 @@ code {
   background: #f3f3f3;
 }
 
-
 .containerCommon {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  align-items: center;
 }
 
 .contentCommon {
@@ -103,6 +101,21 @@ code {
 
 .wrapper-input {
   margin: 10px 0;
+  .ant-radio-inner::after {
+    background-color: #e80b0b;
+  }
+  .ant-radio-checked::after {
+    border: 2px solid #0f45b1;
+  }
+  .ant-radio-checked .ant-radio-inner {
+    border-color: #0f45b1;
+  }
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: none;
+  }
+  .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
+    border-color: #0f45b1;
+  }
 }
 
 .wrapper-input label {
@@ -162,20 +175,30 @@ code {
 }
 
 .resultsInfo {
-  padding: 0 20px ;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+
   span {
     margin-left: 5px;
-    font-size: 17px;
+    font-size: 15px;
     color: #172457;
+  }
+
+  .infoText {
+    font-size: 17px;
     font-weight: bolder;
   }
+
   .info {
     font-size: 15px;
     color: #535353;
     font-weight: 500;
+    padding: 10px;
+    margin: 0;
+    p {
+      margin: 0;
+    }
   }
 }
 
@@ -200,7 +223,6 @@ code {
   padding: 0 15px;
   display: flex;
   width: 365px;
-
 
   .ant-input-number-input {
     width: 60px;
@@ -290,23 +312,6 @@ code {
   border-radius: 3px;
 }
 
-.wrapper-input {
-  .ant-radio-inner::after {
-    background-color: #e80b0b;
-  }
-    .ant-radio-checked::after {
-      border: 2px solid #0f45b1;
-    }
-  .ant-radio-checked .ant-radio-inner {
-    border-color: #0f45b1;
-  }
-  .ant-radio-input:focus + .ant-radio-inner {
-    box-shadow: none;
-  }
-  .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
-    border-color: #0f45b1;
-  }
-}
 
 
 

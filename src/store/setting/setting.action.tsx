@@ -30,4 +30,9 @@ export const totalDiscountFunc = ( discount: number) => ({
   discount
 });
 
+export const periodResult = ( period: number) => ({
+  type: 'PERIOD_RESULT',
+  period
+});
+
 
