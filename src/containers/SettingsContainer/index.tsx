@@ -5,7 +5,7 @@ import {
   homesChange,
   repairsChange,
   roomsButton,
-  flatChange, totalDiscountFunc, totalAmountFunc,
+  flatChange,
 } from "../../store/setting/setting.action";
 import { ISettings } from "../../models/setting.model";
 import Repairs from '../../components/Repairs/index';
@@ -21,8 +21,6 @@ interface DispatchProps {
   homesChange: HandlerDispatch;
   roomsButton: HandlerDispatch;
   flatChange: HandlerDispatch;
-  totalAmountFunc: HandlerDispatch;
-  totalDiscountFunc: HandlerDispatch
 }
 
 interface StoreProps {
@@ -63,8 +61,6 @@ const mapDispatchToProps = {
   homesChange,
   roomsButton,
   flatChange,
-  totalAmountFunc,
-  totalDiscountFunc,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingContainer);
