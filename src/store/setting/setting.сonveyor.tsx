@@ -1,4 +1,4 @@
-import { always, compose, cond, equals, evolve, map, multiply, prop, T} from "ramda";
+import { always, compose, cond, equals, evolve, map, multiply, prop, T, either, gt, lt, both, gte, lte} from "ramda";
 import { ISetting } from "../../models/setting.model";
 
 type Repair = ISetting;
@@ -41,27 +41,13 @@ export const commonDiscount = (total: any) => (discount: number) => {
 };
 
 export const periodSum = (totalAmount: any) => {
-  if(totalAmount > 50000 && totalAmount <=100000) {
-    return 14
-  }
-  else if(totalAmount >= 100000 && totalAmount <=150000) {
-    return 21
-  }
-  else if(totalAmount >= 150000 && totalAmount <=200000) {
-    return 28
-  }
-  else if(totalAmount >= 200000 && totalAmount <= 250000) {
-    return 28
-  }
-  else if(totalAmount >= 250000 && totalAmount <=350000) {
-    return 30
-  }
-  else if(totalAmount >= 350000 && totalAmount <=450000) {
-    return 45
-  } else {
-    return 50
-  }
+  let resultPeriod = cond([
+    [both(gte(100000), lte(50000)), always( 14 )],
+    [both(gte(150000), lte(100000)), always( 21 )],
+    [both(gte(250000), lte(150000)), always( 28 )],
+    [both(gte(350000), lte(250000)), always( 30 )],
+    [both(gte(450000), lte(350000)), always( 45 )],
+    [T, () => 50],
+  ])(totalAmount);
+  return resultPeriod
 };
-
-
-
