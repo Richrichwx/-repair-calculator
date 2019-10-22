@@ -94,7 +94,7 @@ const initialState: ISettings = {
   },
   totalAmount: 507840,
   discount: 0.11,
-  totalDiscount: 55862.4,
+  totalDiscount: -55862.4,
   periodDefault: 50
 };
 

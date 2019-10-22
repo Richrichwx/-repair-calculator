@@ -1,4 +1,4 @@
-import { always, compose, cond, equals, evolve, map, multiply, prop, T, both, gte, lte} from "ramda";
+import { always, compose, cond, equals, evolve, map, multiply, prop, T, both, gte, lte, negate } from "ramda";
 import { ISetting } from "../../models/setting.model";
 
 type Repair = ISetting;
@@ -23,31 +23,27 @@ export const checkedCommon = (actionId: any) =>
 
 
 export const commonResultFunc = (flat: number) => (price: any) => (coefficient: number) => {
-  if (flat >= 10 && flat <= 99) {
-    const result = multiply(flat)(price.small);
-    return result * (coefficient);
-  }
-  else if (flat < 10) {
-    return false
-  }
-  else {
-    const result = multiply(flat)(price.large);
-    return result * (coefficient)
-  }
+  let resultAmount = cond([
+    [both(gte(99), lte(10)), always(multiply(flat)(price.small))],
+    [both(gte(10), lte(0)), always(false)],
+    [both(gte(200), lte(100)), always(multiply(flat)(price.large))],
+    [T, () => 50],
+  ])(flat);
+  return multiply(resultAmount)(coefficient);
 };
 
 export const commonDiscount = (total: any) => (discount: number) => {
-  return total * discount
+  return negate(multiply(total)(discount));
 };
 
 export const periodSum = (totalAmount: any) => {
-  let result = cond([
-    [both(gte(100000), lte(50000)), always( 14 )],
-    [both(gte(150000), lte(100000)), always( 21 )],
-    [both(gte(250000), lte(150000)), always( 28 )],
-    [both(gte(350000), lte(250000)), always( 30 )],
-    [both(gte(450000), lte(350000)), always( 45 )],
+  let results = cond([
+    [both(gte(100000), lte(50000)), always(14)],
+    [both(gte(150000), lte(100000)), always(21)],
+    [both(gte(250000), lte(150000)), always(28)],
+    [both(gte(350000), lte(250000)), always(30)],
+    [both(gte(450000), lte(350000)), always(45)],
     [T, () => 50],
   ])(totalAmount);
-  return result
+  return results
 };

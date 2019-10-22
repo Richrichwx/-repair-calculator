@@ -75,14 +75,6 @@ code {
   margin-bottom: 10px;
 }
 
-.results {
-  padding: 0;
-}
-
-.results-content {
-  margin: 0;
-}
-
 .setting-common {
   padding: 10px 20px;
 }
@@ -166,6 +158,10 @@ code {
   border-radius: 25px;
 }
 
+.results-content {
+  margin: 0;
+}
+
 .resultsContainer {
   margin-top: 20px;
   background: #f3f3f3;
@@ -175,10 +171,7 @@ code {
 }
 
 .resultsInfo {
-  padding: 0 20px;
   display: flex;
-  justify-content: center;
-
   span {
     margin-left: 5px;
     font-size: 15px;
@@ -186,12 +179,13 @@ code {
   }
 
   .infoText {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bolder;
   }
 
   .info {
-    font-size: 15px;
+    width: 130px;
+    font-size: 17px;
     color: #535353;
     font-weight: 500;
     padding: 10px;
@@ -199,6 +193,11 @@ code {
     p {
       margin: 0;
     }
+  }
+
+  .infoPeriod {
+    width: 85px;
+    margin: 0 0 0 20px;
   }
 }
 

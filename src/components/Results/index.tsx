@@ -20,11 +20,11 @@ const Results = (props: IProps) => {
       <div className={"info"}>
         <p>Скидка:</p>
         <div className={"infoText"}>
-          -{props.settingResult.totalDiscount}
+          {props.settingResult.totalDiscount}
           <span>{rub}</span>
         </div>
       </div>
-      <div className={"info"}>
+      <div className={"info infoPeriod"}>
         <p>Срок:</p>
         <div className={"infoText"}>
           {props.settingResult.periodDefault}
