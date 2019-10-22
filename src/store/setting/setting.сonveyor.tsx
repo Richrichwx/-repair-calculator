@@ -45,5 +45,5 @@ export const periodSum = (totalAmount: any) => {
     [both(gte(450000), lte(350000)), always(45)],
     [T, () => 50],
   ])(totalAmount);
-  return results
+  return results;
 };
