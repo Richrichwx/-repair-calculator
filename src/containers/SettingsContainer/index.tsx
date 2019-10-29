@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { RootState } from "../../core/reducers";
+import { RootState, settingSelector } from "../../core/reducers";
 import {
   homesChange,
   repairsChange,
@@ -25,6 +25,7 @@ interface DispatchProps {
 
 interface StoreProps {
   setting: ISettings,
+  flat: any
 }
 
 const SettingContainer = (props: IProps) => {
@@ -44,16 +45,18 @@ const SettingContainer = (props: IProps) => {
         </div>
       </div>
       <div className={"flat-container"}>
-        <Area flatChange={props.flatChange} flat={props.setting.flat}/>
+        <Area flatChange={props.flatChange} flat={props.flat}/>
       </div>
     </div>
   )
 };
 
 const mapStateToProps = (state: RootState) => {
+  const { flatSelector } = settingSelector;
   return {
     setting: state.setting,
-  }
+    flat: flatSelector(state)
+}
 };
 
 const mapDispatchToProps = {

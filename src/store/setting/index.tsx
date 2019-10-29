@@ -1,5 +1,7 @@
 import { ISettings } from "../../models/setting.model";
 
+import * as settingSelector from './setting.selector';
+
 const initialState: ISettings = {
   repairs: [
     {
@@ -148,3 +150,5 @@ export default function (state: ISettings = initialState, action: any) {
       return state
   }
 }
+
+export { settingSelector }

@@ -9,7 +9,6 @@ interface IProps  {
 }
 
 const Repairs = (props: IProps) => {
-
   const repairsChangeInput = (id: number, coefficient: any) => {
     const repairsData = checkedCommon(id)(props.repairs);
     props.repairsChange(repairsData, coefficient);
